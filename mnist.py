@@ -6,8 +6,8 @@
 
 import gzip
 
-with gzip.open('C:/Users/Iano/Desktop/t10k-images-idx3-ubyte.gz', 'rb') as f:
+with gzip.open('C:/Users/Iano/Downloads/t10k-images-idx3-ubyte.gz', 'rb') as f:
     f.read()
-    #magic = f.read(4)
+    magic = f.read(4)
 
-    print(f)
+    print(magic)

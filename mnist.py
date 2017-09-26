@@ -50,6 +50,11 @@ def read_images_from_file(filename):
             images.append(rows)
     return images
 
-train_images = read_labels_from_file("train-images-idx3-ubyte.gz")
-test_images = read_images_from_file("t10k-images-idx3-ubyte.gz")
+train_images = read_labels_from_file("C:/Users/Iano/Downloads/train-images-idx3-ubyte.gz")
+test_images = read_images_from_file("C:/Users/Iano/Downloads/t10k-images-idx3-ubyte.gz")
+
+for row in train_images[4999]:
+    for col in row:
+        print('.' if col <= 127 else '#', end='')
+    print()
 

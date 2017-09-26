@@ -6,22 +6,50 @@
 
 import gzip
 
-#with gzip.open('C:/Users/Iano/Downloads/t10k-images-idx3-ubyte.gz', 'rb') as f:
-f = gzip.open('C:/Users/Iano/Downloads/t10k-labels-idx1-ubyte.gz', 'rb')
-    #f.read()
-magic = f.read(4)
-magic = int.from_bytes(magic, 'big')
+def read_labels_from_file(filename):
+    with gzip.open(filename,'rb') as f:
+        magic = f.read(4)
+        magic = int.from_bytes(magic,'big')
+        print("Magic is:", magic)
 
-print("Magic is: ", magic)
+        nolab = f.read(4)
+        nolab = int.from_bytes(nolab,'big')
+        print("Num of labels is:", nolab)
 
-noimg = f.read(4) #read how many labels in a file
-noimg = int.from_bytes(noimg, 'big')
-print("images are : ",noimg)
+        labels = [f.read(1) for i in range(nolab)]
+        labels = [int.from_bytes(label, 'big') for label in labels]
+    return labels
 
-norow = f.read(4) #read how many rows in a file
-norow = int.from_bytes(norow, 'big')
-print("rows are : ",norow)
+def read_images_from_file(filename):
+    with gzip.open(filename,'rb') as f:
+        magic = f.read(4)
+        magic = int.from_bytes(magic,'big')
+        print("Magic is:", magic)
 
-nocol = f.read(4) #read how many coloumns in a file
-nocol = int.from_bytes(nocol, 'big')
-print("cols are : ",nocol)
+        noimg = f.read(4)
+        noimg = int.from_bytes(noimg,'big')
+        print("Number of images is:", noimg)
+
+        norow = f.read(4)
+        norow = int.from_bytes(norow,'big')
+        print("Number of rows is:", norow)
+
+        nocol = f.read(4)
+        nocol = int.from_bytes(nocol,'big')
+        print("Number of cols is:", nocol)
+
+        images = []
+
+        for i in range(noimg):
+            rows = []
+            for r in range(norow):
+                cols = []
+                for c in range(nocol):
+                    cols.append(int.from_bytes(f.read(1), 'big'))
+                rows.append(cols)
+            images.append(rows)
+    return images
+
+train_images = read_labels_from_file("train-images-idx3-ubyte.gz")
+test_images = read_images_from_file("t10k-images-idx3-ubyte.gz")
+

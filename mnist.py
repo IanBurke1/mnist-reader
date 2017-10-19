@@ -9,6 +9,10 @@ import gzip
 from PIL import Image #image library
 import numpy as np 
 
+# Question 1 - Read the data files
+# Download the image and label files. 
+# Have Python decompress and read them byte by byte into appropriate data structures in memory.
+
 #function to read label files
 def read_labels_from_file(filename):
     with gzip.open(filename,'rb') as f: #use gzip to open the file in read binary mode
@@ -25,8 +29,8 @@ def read_labels_from_file(filename):
         labels = [int.from_bytes(label, 'big') for label in labels]
     return labels
 print()
-train_labels = read_labels_from_file("C:/Users/Iano/Downloads/train-labels-idx1-ubyte.gz")
-test_labels = read_labels_from_file("C:/Users/Iano/Downloads/t10k-labels-idx1-ubyte.gz")
+train_labels = read_labels_from_file("train-labels-idx1-ubyte.gz")
+test_labels = read_labels_from_file("t10k-labels-idx1-ubyte.gz")
 
 def read_images_from_file(filename):
     with gzip.open(filename,'rb') as f:
@@ -62,16 +66,23 @@ def read_images_from_file(filename):
     return images
 print() #line break
 
-train_images = read_images_from_file("C:/Users/Iano/Downloads/train-images-idx3-ubyte.gz")
-test_images = read_images_from_file("C:/Users/Iano/Downloads/t10k-images-idx3-ubyte.gz")
+# Call the functions and run them to read the files
+train_images = read_images_from_file("train-images-idx3-ubyte.gz")
+test_images = read_images_from_file("t10k-images-idx3-ubyte.gz")
 
-# print out image of 2
+# Question 2 - Output an image to the console
+# Output the third image in the training set to the console.
+# Do this by representing any pixel value less than 128 as a full stop and any other pixel value as a hash symbol.
 for row in train_images[4999]:
     for col in row: 
         print('.' if col <= 127 else '#', end='')
     print()
 
-img = Image.fromarray(np.array(train_images[5]).astype('uint8'))
+# Question 3 - Output the image files as PNGs
+# Download the image and label files. 
+# Have Python decompress and read them byte by byte into appropriate data structures in memory.
+img = Image.fromarray(np.array(train_images[4999]).astype('uint8'))
 img = img.convert('RGB') # convert into rgb format
 img.show() # display image in window
-img.save(str(5) + '.png') # save the image file as png
+img.save('train-4999-2.png') # save the image file as png
+

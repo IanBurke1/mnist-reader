@@ -6,7 +6,7 @@ It is a good database for people who want to try learning techniques and pattern
 
 *Referenced from: http://yann.lecun.com/exdb/mnist/*
 
-# Problem Sheet
+## Problem Sheet
 Click [here](https://emerging-technologies.github.io/problems/mnist.html) for the problem sheet
 
 ### 1. Read the data files

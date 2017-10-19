@@ -3,8 +3,11 @@
 # Date: September, 2017
 
 #Problem Sheet: https://emerging-technologies.github.io/problems/digits.html
-
+#import the following python libraries:
 import gzip
+# In shell, run pip install image..
+from PIL import Image #image library
+import numpy as np 
 
 #function to read label files
 def read_labels_from_file(filename):
@@ -57,13 +60,18 @@ def read_images_from_file(filename):
                 rows.append(cols) # append columns array for every row
             images.append(rows) # append rows for every image
     return images
-print()
+print() #line break
+
 train_images = read_images_from_file("C:/Users/Iano/Downloads/train-images-idx3-ubyte.gz")
 test_images = read_images_from_file("C:/Users/Iano/Downloads/t10k-images-idx3-ubyte.gz")
 
+# print out image of 2
 for row in train_images[4999]:
     for col in row: 
         print('.' if col <= 127 else '#', end='')
     print()
 
-
+img = Image.fromarray(np.array(train_images[5]).astype('uint8'))
+img = img.convert('RGB') # convert into rgb format
+img.show() # display image in window
+img.save(str(5) + '.png') # save the image file as png

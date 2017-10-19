@@ -1,6 +1,6 @@
 # Author: Ian Burke
 # Module: Emerging Technologies
-# Date: September, 2017
+# Mnist Reader Problem sheet
 
 #Problem Sheet: https://emerging-technologies.github.io/problems/digits.html
 #import the following python libraries:
@@ -85,4 +85,3 @@ img = Image.fromarray(np.array(train_images[4999]).astype('uint8'))
 img = img.convert('RGB') # convert into rgb format
 img.show() # display image in window
 img.save('train-4999-2.png') # save the image file as png
-

@@ -4,11 +4,32 @@ This repository contains solutions to [problem sheet 2](https://emerging-technol
 
 #### **_Solution can be found above in [mnist.py](https://github.com/ianburkeixiv/mnist-reader/blob/master/mnist.py)_**
 
+## How to run
+1. Click [here](https://github.com/ianburkeixiv/mnist-reader/archive/master.zip) to download zip of the repository
+2. Unzip the repository in a directory e.g. Desktop
+3. Open up a command terminal 
+4. Enter the following to run each python script:
+```bash
+ python mnist.py
+```
+
+## How to clone this repository
+1. Go to clone or download (should be on right side of the repository in green)
+2. Copy the URL.
+3. Open up git bash and change into a directory where you want to save the git repository.
+4. Enter git clone followed by the link: 
+```bash
+git clone https://github.com/ianburkeixiv/mnist-reader.git
+```
+
 ## mnist-reader
 [MNIST]( http://yann.lecun.com/exdb/mnist/) is a famous dataset that consists of handwritten digits commonly used for training various image processing systems and also used in machine learning. The dataset contains 60,000 training images and 10,000 testing images. Each image is a 28x28 pixel square (784 pixels in total).
 It is a popular database for people who want to try learning techniques and pattern recognition methods on real-world data while spending minimal efforts on preprocessing and formatting. 
 
 ![](https://www.tensorflow.org/images/mnist_digits.png)
+
+## Python
+The programming language used for this problem is sheet is [Python](https://www.python.org/)
 
 
 ## Objectives

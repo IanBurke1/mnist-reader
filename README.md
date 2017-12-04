@@ -1,10 +1,12 @@
-# Emerging Technologies - 4th Year 
-Solutions to MNIST problem sheet for [Emerging Technologies](https://emerging-technologies.github.io/)
-## mnist-reader
-The MNIST database of handwritten digits, available from this page, has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST. The digits have been size-normalized and centered in a fixed-size image.
-It is a good database for people who want to try learning techniques and pattern recognition methods on real-world data while spending minimal efforts on preprocessing and formatting. 
+# Problem Sheet 2: Read the MNIST data files
+#### *Emerging Technologies - Lecturer: [Dr Ian McLoughlin](ianmcloughlin.github.io) - 4th Year (Hons) Software Development*
+This repository contains solutions to [problem sheet 2](https://emerging-technologies.github.io/problems/mnist.html) for [Emerging Technologies](https://emerging-technologies.github.io/) 4th year module. These problems relate to the famous MNIST data set.
 
-*Referenced from: http://yann.lecun.com/exdb/mnist/*
+#### **_Solution can be found above in [mnist.py](https://github.com/ianburkeixiv/mnist-reader/blob/master/mnist.py)_**
+
+## mnist-reader
+[MNIST]( http://yann.lecun.com/exdb/mnist/) is a famous dataset that consists of handwritten digits commonly used for training various image processing systems and also used in machine learning. The dataset contains 60,000 training images and 10,000 testing images. Each image is a 28x28 pixel square (784 pixels in total).
+It is a popular database for people who want to try learning techniques and pattern recognition methods on real-world data while spending minimal efforts on preprocessing and formatting. 
 
 ## Problem Sheet
 Click [here](https://emerging-technologies.github.io/problems/mnist.html) for the problem sheet

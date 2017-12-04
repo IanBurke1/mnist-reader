@@ -33,8 +33,7 @@ It is a popular database for people who want to try learning techniques and patt
 The programming language used for this problem is sheet is [Python](https://www.python.org/)
 
 ---
-## Objectives
----
+## *Objectives*
 ### 1. Read the data files
 Download the image and label files. Have Python decompress and read them byte by byte into appropriate data structures in memory.
 ### 2. Output an image to the console

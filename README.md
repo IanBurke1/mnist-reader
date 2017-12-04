@@ -8,6 +8,9 @@ This repository contains solutions to [problem sheet 2](https://emerging-technol
 [MNIST]( http://yann.lecun.com/exdb/mnist/) is a famous dataset that consists of handwritten digits commonly used for training various image processing systems and also used in machine learning. The dataset contains 60,000 training images and 10,000 testing images. Each image is a 28x28 pixel square (784 pixels in total).
 It is a popular database for people who want to try learning techniques and pattern recognition methods on real-world data while spending minimal efforts on preprocessing and formatting. 
 
+![](https://www.tensorflow.org/images/mnist_digits.png)
+
+
 ## Objectives
 ### 1. Read the data files
 Download the image and label files. Have Python decompress and read them byte by byte into appropriate data structures in memory.
